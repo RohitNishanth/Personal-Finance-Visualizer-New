@@ -24,8 +24,16 @@ export default function CategoryPieChart({ transactions }: CategoryPieChartProps
   return (
     <div className="chart-container">
       <PieChart width={400} height={400}>
-        <Pie data={data} dataKey="amount" nameKey="category" cx="50%" cy="50%" outerRadius={100} label>
-          {data.map((entry, index) => (
+        <Pie
+          data={data}
+          dataKey="amount"
+          nameKey="category"
+          cx="50%"
+          cy="50%"
+          outerRadius={100}
+          label
+        >
+          {data.map((_, index) => (
             <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
           ))}
         </Pie>
